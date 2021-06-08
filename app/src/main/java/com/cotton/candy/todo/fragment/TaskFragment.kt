@@ -8,7 +8,8 @@ import android.widget.TimePicker
 import com.cotton.candy.todo.databinding.FragmentTaskBinding
 import java.util.*
 
-class TaskFragment : BaseFragment<FragmentTaskBinding>() , DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener {
+class TaskFragment : BaseFragment<FragmentTaskBinding>()
+    , DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener {
 
     var day = 0
     var month = 0
@@ -19,13 +20,12 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>() , DatePickerDialog.OnDa
     var savedDay = 0
     var savedMonth = 0
     var savedYear = 0
-    var savedHour = 0
-    var savedMinute =0
+    var savedHour = ""
+    var savedMinute =""
 
     override val LOG_TAG: String
         get() = "Task_Fargment"
-    override val bindingInflater: (LayoutInflater) -> FragmentTaskBinding
-        get() = FragmentTaskBinding::inflate
+    override val bindingInflater: (LayoutInflater) -> FragmentTaskBinding = FragmentTaskBinding::inflate
 
     override fun setup() {    }
 
@@ -33,12 +33,13 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>() , DatePickerDialog.OnDa
         binding!!.apply {
             datePickerButton.setOnClickListener {
                 getDateTimeCalender()
-
                 DatePickerDialog((activity)!!,this@TaskFragment, year, month, day).show()
+            }
+            timePickerButton.setOnClickListener{
+                TimePickerDialog(activity,this@TaskFragment,hour,minute,true).show()
             }
         }
     }
-
     private fun getDateTimeCalender() {
         val cal: Calendar = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)
@@ -50,21 +51,35 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>() , DatePickerDialog.OnDa
     }
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         savedDay = dayOfMonth
-        savedMonth = month
+        savedMonth = month+1
         savedYear = year
 
         getDateTimeCalender()
-        TimePickerDialog(activity,this,hour,minute,true).show()
+        binding!!.datePickerButton.text = " ${getMonthFormat(savedMonth)} ${savedDay} ${savedYear} "
     }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        savedHour = hourOfDay
-        savedMinute = minute
+        savedHour = if(hourOfDay < 10 && hourOfDay >= 0)  "0$hourOfDay" else "$hourOfDay"
+        savedMinute =  if(minute < 10 && minute >= 0)  "0$minute" else "$minute"
 
-        binding!!.textDate.text ="${savedDay} - ${savedMonth} - ${savedYear} - hour: $savedHour minute: $savedMinute"
+        binding!!.timePickerButton.text =" $savedHour : $savedMinute"
 
     }
-
-
+    private fun getMonthFormat(month: Int) =
+        when(month){
+            1 ->  "JAN"
+            2 ->  "FEB"
+            3 ->  "MAR"
+            4 ->  "APR"
+            5 ->  "MAY"
+            6 ->  "JUN"
+            7 ->  "JUL"
+            8 ->  "AUG"
+            9 ->  "SEP"
+            10 -> "OCT"
+            11 -> "NOV"
+            12 -> "DEC"
+            else -> "JAN"
+    }
 
 }

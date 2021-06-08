@@ -5,14 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    style="@style/style_constraint_layout"
+    android:elevation="4dp"
+    android:paddingTop="40dp"
+    android:paddingHorizontal="15dp"
     tools:context=".fragment.TaskFragment">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Task"
+        android:hint=" Task"
+        android:drawableLeft="@drawable/ic_baseline_add_task_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,20 +26,33 @@
         style="?android:spinnerStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="JAN 01 2020"
+        android:hint=" JAN 01 2020"
+        android:drawableLeft="@drawable/ic_date_range"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_task" />
 
-    <TextView
-        android:id="@+id/text_date"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/time_pickerButton"
+        style="?android:spinnerStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:hint=" 12:30 MA"
+        android:drawableLeft="@drawable/ic_baseline_access_time_24"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_pickerButton"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
+
+    <EditText
+        android:id="@+id/editText_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Note"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        app:layout_constraintTop_toBottomOf="@+id/time_pickerButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

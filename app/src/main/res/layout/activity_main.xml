@@ -35,7 +35,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         style="@style/style_constraint_layout">
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add_task"
             android:layout_width="wrap_content"
@@ -47,13 +46,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_add_task" />
 
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </LinearLayout>

@@ -10,23 +10,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override val LOG_TAG: String
         get() = "Main_Activity"
-    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
-        get() = ActivityMainBinding::inflate
+    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
 
+    private val _TaskFragment = TaskFragment()
 
     override fun setUp() {   }
 
     override fun addCallbacks() {
         binding!!.fabAddTask.setOnClickListener{
-            loadFragments(TaskFragment())
+            loadFragments(_TaskFragment)
         }
     }
 
     private fun loadFragments(fragment: Fragment){
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment_container, fragment)
+            add(R.id.fragment_container, fragment)
             commit()
-
         }
     }
 }
