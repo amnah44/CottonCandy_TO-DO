@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TODO" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mustard_color</item>
+        <item name="colorPrimaryVariant">@color/mustard_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mustard_color</item>
+        <item name="colorSecondaryVariant">@color/mustard_color</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <!-- Padding style of textView -->
+    <style name="style_padding">
+        <item name="android:paddingStart">@dimen/padding_normal</item>
+        <item name="android:paddingEnd">@dimen/padding_normal</item>
+    </style>
+    <!-- Text style of textView -->
+    <style name="style_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Style of Constraint layout-->
+    <style name="style_constraint_layout">
+        <item name="android:background">@drawable/primary_shape</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+    </style>
+    <!-- Style of Floating action button-->
+    <style name="style_floating_action_button">
+        <item name="android:backgroundTint">@color/mustard_color</item>
+        <item name="android:tint">@color/black</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+    </style>
+</resources>
