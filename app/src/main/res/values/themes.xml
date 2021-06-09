@@ -32,7 +32,7 @@
     <!-- Style of Floating action button-->
     <style name="style_floating_action_button">
         <item name="android:backgroundTint">@color/mustard_color</item>
-        <item name="android:tint">@color/black</item>
+        <item name="android:tint">@color/white</item>
         <item name="android:elevation">@dimen/padding_normal</item>
     </style>
 </resources>
