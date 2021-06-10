@@ -1,4 +1,4 @@
-package com.cotton.candy.todo.fragment
+package com.cotton.candy.todo.ui.fragment
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
