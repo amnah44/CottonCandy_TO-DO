@@ -25,14 +25,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun addCallbacks() {
 
         //this part to add animation in image tha content stars
-        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
-        moveStars.repeatCount = Animation.INFINITE
-        binding!!.image1.startAnimation(moveStars)
-        binding!!.image2.startAnimation(moveStars)
-        binding!!.image3.startAnimation(moveStars)
-        binding!!.image4.startAnimation(moveStars)
-        binding!!.image5.startAnimation(moveStars)
-        binding!!.image6.startAnimation(moveStars)
+//        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
+//        moveStars.repeatCount = Animation.INFINITE
+//        binding!!.image1.startAnimation(moveStars)
+//        binding!!.image2.startAnimation(moveStars)
+//        binding!!.image3.startAnimation(moveStars)
+//        binding!!.image4.startAnimation(moveStars)
+//        binding!!.image5.startAnimation(moveStars)
+//        binding!!.image6.startAnimation(moveStars)
 
 
         binding!!.fabAddTask.setOnClickListener{

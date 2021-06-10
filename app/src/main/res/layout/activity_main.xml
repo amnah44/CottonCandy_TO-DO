@@ -43,10 +43,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+            android:fontFamily="@font/gabriela"
             android:text="CottonCandy-TODO"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/gabriela"
             android:text="How is your work life balance this week?"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,24 +67,54 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:layout_margin="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
-            android:layout_margin="24dp"
             android:background="@drawable/primary_shape"
             android:gravity="center|start"
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
-            <TextView
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/minProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                app:cpb_background_progressbar_color="#ccc"
+                app:cpb_background_progressbar_width="6dp"
+                app:cpb_progress_max="80"
+                app:cpb_progressbar_color="@color/txt_color"
+                app:cpb_progressbar_width="8dp"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="64dp"
-                android:text="Progress to your Tasks"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="64dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gabriela"
+                    android:text="Great Job !"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gabriela"
+                    android:text="Your life is well balanced"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -121,7 +152,7 @@
             android:elevation="24dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintHorizontal_bias="0.92"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0"
@@ -136,7 +167,7 @@
             android:elevation="24dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.75"
@@ -154,7 +185,7 @@
             app:layout_constraintHorizontal_bias="0.92"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.42000002"
+            app:layout_constraintVertical_bias="0.37"
             app:srcCompat="@drawable/ic_star"
             app:tint="@color/white" />
 
@@ -181,7 +212,7 @@
             android:elevation="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintHorizontal_bias="0.89"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.73"
