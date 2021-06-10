@@ -27,7 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     //load fragment to enter tasks with simple animation
     private fun loadFragments(fragment: Fragment){
         val transaction =  supportFragmentManager.beginTransaction()
-        transaction?.apply {
+        transaction.apply {
             setCustomAnimations(
                 R.anim.slide_from_right,
                 R.anim.slideout_from_left,

@@ -11,8 +11,6 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
     abstract val LOG_TAG: String
     private var _binding: ViewBinding? = null
 
-
-
     abstract val bindingInflater: (LayoutInflater) -> VB
 
     protected val binding
@@ -35,9 +33,4 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
     protected fun log(value: Any) {
         Log.v(LOG_TAG, value.toString())
     }
-
-//    fun showToast(Toast:String){
-//
-//    }
-
 }
