@@ -2,9 +2,12 @@ package com.cotton.candy.todo.fragment
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.ContentValues
 import android.view.LayoutInflater
 import android.widget.DatePicker
 import android.widget.TimePicker
+import com.cotton.candy.todo.dataBase.TablesDetiles
+import com.cotton.candy.todo.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.FragmentTaskBinding
 import java.util.*
 
@@ -25,21 +28,84 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>()
 
     override val LOG_TAG: String
         get() = "Task_Fargment"
+    //make object from TaskDbHelper class
+    lateinit var  dataBaseHelper: TaskDataBase
+
+
     override val bindingInflater: (LayoutInflater) -> FragmentTaskBinding = FragmentTaskBinding::inflate
 
-    override fun setup() {    }
+    override fun setup() {
+        /*
+        *define the object of TaskDataBase
+         */
+        dataBaseHelper=TaskDataBase(requireActivity())
+
+    }
 
     override fun addCallBack() {
+
         binding!!.apply {
             datePickerButton.setOnClickListener {
                 getDateTimeCalender()
                 DatePickerDialog((activity)!!,this@TaskFragment, year, month, day).show()
             }
+
+
             timePickerButton.setOnClickListener{
                 TimePickerDialog(activity,this@TaskFragment,hour,minute,true).show()
             }
+
+            // add task details to database when click to button
+            addTask.setOnClickListener {
+                addTasksToDatabase()
+            }
         }
     }
+
+
+    /*
+    *this function is to add task to database
+    * first make variable to get values from views
+    * then make new entry , and insert this entry to task table
+     */
+
+    private  fun addTasksToDatabase(){
+
+        // make variable to save the value from view in it
+        binding?.apply {
+            val task = editTextTask.text.toString()
+            val note = editTextNote.text.toString()
+            val date = datePickerButton.text.toString()
+            val time = timePickerButton.text.toString()
+
+            // make entry to insert the value from view to database
+            val newEntry = ContentValues().apply {
+                put(TablesDetiles.DATE, date)
+                put(TablesDetiles.NOTE, note)
+                put(TablesDetiles.TASK, task)
+                put(TablesDetiles.TIME, time)
+
+
+            }
+
+            //set new entry in data base
+            writeInDatabase(newEntry, TablesDetiles.TABLE_NAME)
+
+        }
+
+    }
+
+      /*
+      * this function to insert any new entry to any table exists in tasks database
+      */
+    private  fun writeInDatabase(newEntry:ContentValues,table_name:String){
+        dataBaseHelper.writableDatabase.insert(
+             table_name,
+            null,
+            newEntry
+        )
+    }
+
     private fun getDateTimeCalender() {
         val cal: Calendar = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)
@@ -59,8 +125,8 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>()
     }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        savedHour = if(hourOfDay < 10 && hourOfDay >= 0)  "0$hourOfDay" else "$hourOfDay"
-        savedMinute =  if(minute < 10 && minute >= 0)  "0$minute" else "$minute"
+        savedHour = if(hourOfDay in 0..9)  "0$hourOfDay" else "$hourOfDay"
+        savedMinute =  if(minute in 0..9)  "0$minute" else "$minute"
 
         binding!!.timePickerButton.text =" $savedHour : $savedMinute"
 

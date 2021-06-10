@@ -57,5 +57,16 @@
             android:hint=" Note"
             app:layout_constraintTop_toBottomOf="@+id/time_pickerButton" />
 
+        <Button
+            android:id="@+id/addTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="Add Task"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_note" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
