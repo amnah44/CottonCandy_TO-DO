@@ -1,6 +1,8 @@
 package com.cotton.candy.todo.ui
 
 
+import android.app.Activity
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.animation.Animation
@@ -15,9 +17,11 @@ import com.cotton.candy.todo.data.dataBase.TablesDetiles
 import com.cotton.candy.todo.data.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.ActivityMainBinding
 import com.cotton.candy.todo.ui.fragment.TaskFragment
+import com.cotton.candy.todo.ui.fragment.TodoListFragment
+import com.cotton.candy.todo.util.Constants
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask {
+class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, TaskItemClickListener {
     lateinit var moveStars: Animation
     private lateinit var dataBaseHelper: TaskDataBase
     private lateinit var taskModel: TaskModel
@@ -59,7 +63,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask {
         taskItems.reverse()
         binding?.taskRecycler?.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-            adapter = TaskAdapter(taskItems)
+            adapter = TaskAdapter(taskItems, this@MainActivity)
         }
     }
 
@@ -101,6 +105,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask {
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             commit()
         }
+    }
+
+    override fun onTaskItemClick(task: TaskModel) {
+        val todoListFragment = TodoListFragment()
+        val bundle = Bundle()
+        bundle.putInt(Constants.KEY_ID,task.id)
+        bundle.putString(Constants.KEY_TASK,task.task)
+        bundle.putString(Constants.KEY_note,task.note)
+        todoListFragment.arguments = bundle
+        Log.i("argCity",bundle.toString())
+        loadFragments(todoListFragment)
     }
 
 

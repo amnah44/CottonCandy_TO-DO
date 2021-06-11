@@ -17,7 +17,8 @@ import com.cotton.candy.todo.ui.MainActivity
 import com.cotton.candy.todo.ui.NotifyAdapterNewTask
 import java.util.*
 
-class TaskFragment (val notifyAdapterNewTask: NotifyAdapterNewTask): BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
+class TaskFragment(val notifyAdapterNewTask: NotifyAdapterNewTask) :
+    BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
 
     var day = 0
@@ -114,8 +115,8 @@ class TaskFragment (val notifyAdapterNewTask: NotifyAdapterNewTask): BaseFragmen
 
             }
             //set new entry in data base
-            writeInDatabase(newEntry, TablesDetiles.TABLE_NAME)
-            taskItem = TaskModel(0, note, date, time, task)
+            val id = writeInDatabase(newEntry, TablesDetiles.TABLE_NAME)
+            taskItem = TaskModel(id.toInt(), note, date, time, task)
         }
 
     }
@@ -123,13 +124,12 @@ class TaskFragment (val notifyAdapterNewTask: NotifyAdapterNewTask): BaseFragmen
     /*
     * this function to insert any new entry to any table exists in tasks database
     */
-    private fun writeInDatabase(newEntry: ContentValues, table_name: String) {
+    private fun writeInDatabase(newEntry: ContentValues, table_name: String) =
         dataBaseHelper.writableDatabase.insert(
             table_name,
             null,
             newEntry
         )
-    }
 
     private fun getDateTimeCalender() {
         val cal: Calendar = Calendar.getInstance()
