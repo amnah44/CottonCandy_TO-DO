@@ -72,7 +72,7 @@
         <item name="android:background">@drawable/layer</item>
     </style>
 <!--  style for edit text task  -->
-    <style name="black.editTexlTask">
+    <style name="editTexlTask">
         <item name="android:textColorHint">@color/gray100</item>
         <item name="android:background">@drawable/txt_edit</item>
     </style>

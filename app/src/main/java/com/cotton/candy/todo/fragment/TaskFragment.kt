@@ -19,7 +19,6 @@ import java.util.*
 class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
 
-
     var savedDay = 0
     var savedMonth = 0
     var savedYear = 0

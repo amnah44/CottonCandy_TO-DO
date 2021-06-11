@@ -7,4 +7,6 @@
     <color name="gray100">#9E9E9E</color>
     <color name="txt_color">#BEF6A7</color>
     <color name="gray50">#C5C5C5</color>
+
+    <color name="blackDark">#252525</color>
 </resources>
