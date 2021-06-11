@@ -8,11 +8,13 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
+    app:backgroundTint="@android:color/transparent"
     style="@style/fragment_container"
     tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_for_task"
+        style="@style/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

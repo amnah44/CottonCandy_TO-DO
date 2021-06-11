@@ -45,6 +45,7 @@
     </style>
     <!--  style for fragment container  -->
     <style name="fragment_container">
+        <item name="background">@color/white</item>
         <item name="android:textColor">@color/white</item>
     </style>
 <!--  style for img_dark  -->
