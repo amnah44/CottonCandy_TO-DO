@@ -54,7 +54,8 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
             }
             datePickerButton.setOnClickListener {
                 getDateTimeCalender()
-                DatePickerDialog((activity)!!, this@TaskFragment, year, month, day).show()
+
+                DatePickerDialog((activity)!!, this@TaskFragment,year, month, day).show()
             }
 
 

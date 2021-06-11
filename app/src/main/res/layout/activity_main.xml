@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:fontFamily="@font/gabriela"
+            android:fontFamily="@font/sniglet"
             android:text="CottonCandy-TODO"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -99,7 +99,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/gabriela"
+                    android:fontFamily="@font/sniglet"
                     android:text="Great Job !"
                     android:textColor="@color/white"
                     android:textStyle="bold"
