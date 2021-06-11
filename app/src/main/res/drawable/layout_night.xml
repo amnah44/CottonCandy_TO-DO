@@ -15,7 +15,7 @@
     <item android:top="@dimen/margin2x">
         <shape>
             <corners android:radius="20dp"/>
-            <solid android:color="@color/blackDark"/>
+            <solid android:color="#1E1E1E"/>
         </shape>
     </item>
 
