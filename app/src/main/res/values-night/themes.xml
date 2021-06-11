@@ -73,7 +73,7 @@
     </style>
     <!-- Style of Floating action button-->
     <style name="style_floating_action_button" parent="Theme.AppCompat.Light">
-        <item name="android:backgroundTint">@color/mustard_color</item>
+        <item name="android:backgroundTint">#A88EDA</item>
         <item name="android:tint">@color/white</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:elevation">@dimen/padding_normal</item>
