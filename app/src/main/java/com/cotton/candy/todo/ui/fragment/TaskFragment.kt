@@ -13,6 +13,7 @@ import com.cotton.candy.todo.R
 import com.cotton.candy.todo.dataBase.TablesDetiles
 import com.cotton.candy.todo.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.FragmentTaskBinding
+import com.cotton.candy.todo.ui.MainActivity
 import java.util.*
 
 class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
@@ -71,9 +72,19 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
             addTask.setOnClickListener {
                 addTasksToDatabase()
                 (activity)!!.supportFragmentManager.beginTransaction().apply {
-                    remove(this@TaskFragment).addToBackStack(null)
+                    setCustomAnimations(
+                        R.anim.slide_from_right,
+                        R.anim.slideout_from_left,
+                        R.anim.slide_from_left,
+                        R.anim.slideout_from_right
+                    )
+                    remove(this@TaskFragment)
+                    addToBackStack(java.lang.String.valueOf(MainActivity()))
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     commit()
-                }
+
+
+               }
             }
         }
     }
