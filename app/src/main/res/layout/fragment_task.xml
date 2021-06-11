@@ -10,125 +10,121 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/margin_normal"
-        android:background="@color/white">
 
-        <EditText
-            android:id="@+id/editText_task"
+        android:paddingTop="@dimen/margin_normal"
+        android:background="@drawable/circle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sniglet"
-            android:hint=" Enter new task"
-            android:layout_margin="@dimen/margin2x"
-            android:background="@drawable/txt_edit"
-            android:lines="3"
-            android:maxLines="8"
-            android:paddingStart="@dimen/margin4x"
-            android:textColor="@color/black"
-            android:textSize="@dimen/txt3x"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/margin4x"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/layer"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sniglet"
+                android:text="New Task"
+                android:textSize="32dp"
+                android:layout_marginTop="@dimen/margin2x"
+                app:layout_constraintBottom_toTopOf="@+id/editText_task"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/editText_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin2x"
+                android:background="@drawable/txt_edit"
+                android:fontFamily="@font/sniglet"
+                android:hint=" Enter new task . . ."
+                android:lines="3"
+                android:maxLines="8"
+                android:paddingStart="@dimen/margin4x"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt3x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <Button
+                android:id="@+id/date_pickerButton"
+                style="?android:spinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin2x"
+                android:background="@drawable/btn_shape"
+                android:drawableLeft="@drawable/ic_date_range"
+                android:hint=" 11-11-2016 , Friday"
+                android:paddingHorizontal="@dimen/margin4x"
+                android:paddingVertical="@dimen/margin2x"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_task" />
+
+
+            <Button
+                android:id="@+id/time_pickerButton"
+                style="?android:spinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin2x"
+                android:background="@drawable/btn_shape"
+                android:drawableLeft="@drawable/ic_baseline_more_time_24"
+                android:hint=" 11:13"
+                android:textAlignment="viewStart"
+                android:paddingHorizontal="@dimen/margin4x"
+                android:paddingVertical="@dimen/margin2x"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
+
+
+
+            <EditText
+                android:id="@+id/editText_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin2x"
+                android:background="@drawable/btn_shape"
+                android:fontFamily="@font/sniglet"
+                android:hint=" Note"
+                android:maxLines="5"
+                android:lines="3"
+                android:padding="@dimen/margin2x"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_pickerButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addTask"
+            style="@style/style_floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.97"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
-
-        <Button
-            android:id="@+id/date_pickerButton"
-            style="?android:spinnerStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintHorizontal_bias="0.3"
-            android:background="@drawable/btn_shape"
-            android:drawableLeft="@drawable/ic_date_range"
-            android:hint=" Today"
-            android:paddingVertical="@dimen/margin2x"
-            android:paddingHorizontal="@dimen/margin4x"
-            android:textColor="@color/mustard_color"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_task" />
-
-
-        <Button
-            android:id="@+id/time_pickerButton"
-            style="?android:spinnerStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/circle"
-            android:drawableLeft="@drawable/ic_baseline_more_time_24"
-            android:paddingStart="12dp"
-            android:layout_marginStart="@dimen/margin2x"
-            android:textColor="@color/gray"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/date_pickerButton"
-            app:layout_constraintStart_toEndOf="@+id/date_pickerButton"
-            app:layout_constraintTop_toTopOf="@+id/date_pickerButton" />
-
-        <ImageView
-            android:id="@+id/note_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_edit_24"
-            app:layout_constraintBottom_toTopOf="@+id/addTask"
-            app:layout_constraintEnd_toEndOf="@+id/date_pickerButton"
-            app:layout_constraintStart_toStartOf="@+id/date_pickerButton"
-            app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
-
-        <ImageView
-            android:id="@+id/dark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_baseline_star_outline_24"
-            app:layout_constraintBottom_toTopOf="@+id/addTask"
-            app:layout_constraintStart_toEndOf="@+id/note_icon"
-            app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
-
-        <ImageView
-            android:id="@+id/photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-
-            android:src="@drawable/ic_outline_photo_library_24"
-            app:layout_constraintBottom_toTopOf="@+id/addTask"
-            app:layout_constraintStart_toEndOf="@+id/dark"
-            app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
-
-        <EditText
-            android:id="@+id/editText_note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/txt_edit"
-            android:fontFamily="@font/sniglet"
-            android:hint=" Note"
-            android:layout_margin="@dimen/margin2x"
-            android:maxLines="5"
-            android:padding="@dimen/margin2x"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/note_icon" />
-
-        <Button
-            android:id="@+id/addTask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/add_shape"
-            android:fontFamily="@font/sniglet"
-            android:paddingHorizontal="49dp"
-            android:paddingVertical="@dimen/margin2x"
-            android:layout_margin="@dimen/margin4x"
-            android:text="Add Task"
-            android:elevation="@dimen/margin2x"
-
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:srcCompat="@drawable/ic_baseline_check_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

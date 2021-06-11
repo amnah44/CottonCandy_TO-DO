@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.core.view.isVisible
+import androidx.fragment.app.FragmentTransaction
+import com.cotton.candy.todo.R
 import com.cotton.candy.todo.dataBase.TablesDetiles
 import com.cotton.candy.todo.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.FragmentTaskBinding
@@ -48,10 +50,12 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
 
     override fun addCallBack() {
 
+
         binding!!.apply {
-            noteIcon.setOnClickListener {
-                editTextNote.isVisible = editTextNote.isVisible != true
-            }
+
+
+
+
             datePickerButton.setOnClickListener {
                 getDateTimeCalender()
 
@@ -66,6 +70,10 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
             // add task details to database when click to button
             addTask.setOnClickListener {
                 addTasksToDatabase()
+                (activity)!!.supportFragmentManager.beginTransaction().apply {
+                    remove(this@TaskFragment).addToBackStack(null)
+                    commit()
+                }
             }
         }
     }
