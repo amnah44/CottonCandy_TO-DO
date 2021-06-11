@@ -7,16 +7,17 @@ import android.content.ContentValues
 import android.view.LayoutInflater
 import android.widget.DatePicker
 import android.widget.TimePicker
-import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentTransaction
 import com.cotton.candy.todo.R
-import com.cotton.candy.todo.dataBase.TablesDetiles
-import com.cotton.candy.todo.dataBase.TaskDataBase
+import com.cotton.candy.todo.data.TaskModel
+import com.cotton.candy.todo.data.dataBase.TablesDetiles
+import com.cotton.candy.todo.data.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.FragmentTaskBinding
 import com.cotton.candy.todo.ui.MainActivity
+import com.cotton.candy.todo.ui.NotifyAdapterNewTask
 import java.util.*
 
-class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
+class TaskFragment (val notifyAdapterNewTask: NotifyAdapterNewTask): BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
 
     var day = 0
@@ -30,6 +31,7 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
     var savedYear = 0
     var savedHour = ""
     var savedMinute = ""
+    private lateinit var taskItem: TaskModel
 
     override val LOG_TAG: String
         get() = "Task_Fargment"
@@ -55,12 +57,10 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
         binding!!.apply {
 
 
-
-
             datePickerButton.setOnClickListener {
                 getDateTimeCalender()
 
-                DatePickerDialog((activity)!!, this@TaskFragment,year, month, day).show()
+                DatePickerDialog((activity)!!, this@TaskFragment, year, month, day).show()
             }
 
 
@@ -81,8 +81,8 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
                     setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     commit()
 
-
-               }
+                    notifyAdapterNewTask.onAddNewTask(taskItem)
+                }
             }
         }
     }
@@ -94,6 +94,7 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
     * then make new entry, and insert this entry to task table
      */
 
+
     private fun addTasksToDatabase() {
 
         // make a variable to save the value from view in it
@@ -102,6 +103,7 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
             val note = editTextNote.text.toString()
             val date = datePickerButton.text.toString()
             val time = timePickerButton.text.toString()
+
 
             // make entry to insert the value from view to database
             val newEntry = ContentValues().apply {
@@ -113,7 +115,7 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
             }
             //set new entry in data base
             writeInDatabase(newEntry, TablesDetiles.TABLE_NAME)
-
+            taskItem = TaskModel(0, note, date, time, task)
         }
 
     }

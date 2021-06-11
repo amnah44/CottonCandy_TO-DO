@@ -1,4 +1,4 @@
-package com.cotton.candy.todo.dataBase
+package com.cotton.candy.todo.data.dataBase
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

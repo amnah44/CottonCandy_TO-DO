@@ -1,6 +1,4 @@
-package com.cotton.candy.todo.dataBase
-
-import java.net.IDN
+package com.cotton.candy.todo.data.dataBase
 
 object TablesDetiles {
     const val TABLE_NAME="TASKS"
