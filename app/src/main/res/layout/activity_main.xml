@@ -76,7 +76,7 @@
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
                 android:progressDrawable="@drawable/circular_progress_bar"
-                app:cpb_background_progressbar_color="#C4A8FB"
+                app:cpb_background_progressbar_color="#B89BF1"
                 app:cpb_background_progressbar_width="6dp"
                 app:cpb_progress_max="80"
                 app:cpb_progressbar_color="@color/txt_color"
@@ -121,7 +121,7 @@
             app:layout_constraintHorizontal_bias="0.904"
             app:layout_constraintStart_toStartOf="parent"
             app:backgroundTint="@android:color/transparent"
-            app:srcCompat="@drawable/ic_add" />
+            android:src="@drawable/ic_add" />
 
         <ImageView
             android:id="@+id/image1"
