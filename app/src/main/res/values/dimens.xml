@@ -3,4 +3,7 @@
     <dimen name="padding_normal">16dp</dimen>
     <dimen name="text_size_normal">24sp</dimen>
     <dimen name="margin_normal">64dp</dimen>
+    <dimen name="margin4x">32dp</dimen>
+    <dimen name="txt3x">24sp</dimen>
+    <dimen name="margin2x">16dp</dimen>
 </resources>
