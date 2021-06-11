@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--The left side of the bottom is 3 from the left side of the upper layer. dp, The top of the bottom, 6 from the top of the top. dp,If this control is not done, the left and upper sides of the bottom and upper layers will overlap.-->
+    <item android:left="3dp"
+        android:bottom="6dp">
+        <shape>
+            <corners android:radius="20dp"/>
+
+            <solid android:color="#D1BBFB"/>
+        </shape>
+    </item>
+
+    <!--The right side of the upper layer is 3 from the right side of the lower layer. dp, The bottom of the upper layer is 6 from the bottom of the lower layer. dp-->
+    <item android:top="@dimen/margin2x">
+        <shape>
+            <corners android:radius="10dp"/>
+            <solid android:color="#252525"/>
+        </shape>
+    </item>
+
+</layer-list>

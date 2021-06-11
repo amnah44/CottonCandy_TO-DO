@@ -1,4 +1,4 @@
-package com.cotton.candy.todo.ui.fragment
+package com.cotton.candy.todo.fragment
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -7,7 +7,6 @@ import android.content.ContentValues
 import android.view.LayoutInflater
 import android.widget.DatePicker
 import android.widget.TimePicker
-import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentTransaction
 import com.cotton.candy.todo.R
 import com.cotton.candy.todo.dataBase.TablesDetiles
@@ -146,7 +145,7 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
         savedYear = year
 
         getDateTimeCalender()
-        binding!!.datePickerButton.text = " ${getMonthFormat(savedMonth)} ${savedDay} ${savedYear} "
+        binding!!.datePickerButton.text = "  ${savedDay} - ${getMonthFormat(savedMonth)} - ${savedYear} "
     }
 
     @SuppressLint("SetTextI18n")

@@ -1,14 +1,16 @@
 package com.cotton.candy.todo.ui
 
 
+import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.animation.Animation
-import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.cotton.candy.todo.R
 import com.cotton.candy.todo.databinding.ActivityMainBinding
-import com.cotton.candy.todo.ui.fragment.TaskFragment
+import com.cotton.candy.todo.fragment.TaskFragment
 
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -20,9 +22,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val _TaskFragment = TaskFragment()
 
-    override fun setUp() {   }
-
     override fun addCallbacks() {
+
+        binding!!.apply {
+            fabAddTask.setOnClickListener{
+                loadFragments(_TaskFragment)
+            }
+            imgDark.setOnClickListener{
+                val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+                when (isNightTheme) {
+                    Configuration.UI_MODE_NIGHT_YES ->{
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+                    Configuration.UI_MODE_NIGHT_NO ->{
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                }
+            }
+        }
 
         //this part to add animation in image tha content stars
 //        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
@@ -35,9 +52,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 //        binding!!.image6.startAnimation(moveStars)
 
 
-        binding!!.fabAddTask.setOnClickListener{
-            loadFragments(_TaskFragment)
-        }
+
     }
 
     //load fragment to enter tasks with simple animation
@@ -56,4 +71,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             commit()
         }
     }
+
+    override fun setup() {   }
 }

@@ -76,7 +76,7 @@
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
                 android:progressDrawable="@drawable/circular_progress_bar"
-                app:cpb_background_progressbar_color="#ccc"
+                app:cpb_background_progressbar_color="#C1ABED"
                 app:cpb_background_progressbar_width="6dp"
                 app:cpb_progress_max="80"
                 app:cpb_progressbar_color="@color/txt_color"
@@ -120,6 +120,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.904"
             app:layout_constraintStart_toStartOf="parent"
+            app:backgroundTint="@android:color/transparent"
             app:srcCompat="@drawable/ic_add" />
 
         <ImageView
@@ -164,8 +165,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.75"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/mustard_color" />
+            app:tint="@color/mustard_color"
+            app:srcCompat="@drawable/ic_star" />
 
         <ImageView
             android:id="@+id/image4"

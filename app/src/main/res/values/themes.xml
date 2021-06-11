@@ -64,14 +64,18 @@
         <item name="android:background">@drawable/layer</item>
     </style>
 <!--  style for edit text task  -->
-    <style name="editTexlTask">
-        <item name="android:textColor">@color/black</item>
+    <style name="black.editTexlTask">
+        <item name="android:textColorHint">@color/gray100</item>
         <item name="android:background">@drawable/txt_edit</item>
     </style>
 <!--  style for adit text for add task  -->
-    <style name="editTextForAll">
+    <style name="black.editTextForAll">
         <item name="android:background">@drawable/btn_shape</item>
     </style>
+<!--  style textNewTask  -->
+    <style name="gray.textNewTask">
+    </style>
+
 </resources>
 
 

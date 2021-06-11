@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.fragment.TaskFragment">
+    tools:context=".fragment.TaskFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                style="@style/gray"/>
+                style="@style/gray.textNewTask"/>
 
              <EditText
                 android:id="@+id/editText_task"
@@ -49,7 +49,7 @@
                 android:maxLines="3"
                 android:paddingStart="@dimen/margin4x"
                 android:textSize="@dimen/txt3x"
-                 style="@style/editTexlTask"
+                 style="@style/black.editTexlTask"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,11 +67,12 @@
                 android:paddingVertical="@dimen/margin2x"
                 android:textAlignment="textStart"
                 android:textSize="14sp"
-                style="@style/editTextForAll"
+                style="@style/black.editTextForAll"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText_task" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_task"
+                app:backgroundTint="@android:color/transparent" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -81,7 +82,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editText_task"
                 app:layout_constraintEnd_toEndOf="@+id/editText_task"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
 
             <Button
                 android:id="@+id/time_pickerButton"
@@ -94,12 +94,11 @@
                 android:paddingHorizontal="@dimen/margin4x"
                 android:paddingVertical="@dimen/margin2x"
                 android:textSize="14sp"
-                style="@style/editTextForAll"
+                style="@style/black.editTextForAll"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/date_pickerButton"
+                app:backgroundTint="@android:color/transparent"
                />
-
-
 
             <EditText
                 android:id="@+id/editText_note"
@@ -111,8 +110,7 @@
                 android:maxLines="5"
                 android:lines="3"
                 android:padding="@dimen/margin2x"
-                android:visibility="visible"
-                style="@style/editTextForAll"
+                style="@style/black.editTextForAll"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time_pickerButton" />
@@ -131,6 +129,7 @@
             app:layout_constraintVertical_bias="0.97"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:backgroundTint="@android:color/transparent"
             app:srcCompat="@drawable/ic_baseline_check_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.cotton.candy.todo.ui.fragment
+package com.cotton.candy.todo.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
