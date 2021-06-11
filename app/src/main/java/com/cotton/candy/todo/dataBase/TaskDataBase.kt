@@ -18,8 +18,6 @@ class TaskDataBase(context: Context) : SQLiteOpenHelper(context, DBNAME, null, D
                 "${TablesDetiles.TASK} TEXT" +
                 ")"
         dataBase?.execSQL(sql)
-
-
     }
 
     /*

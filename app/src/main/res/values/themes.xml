@@ -13,6 +13,14 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- style for date and time  -->
+    <style name="timeAndDatePicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/mustard_color</item>
+        <item name="colorAccent">@color/mustard_color</item>
+    </style>
+
     <!-- Padding style of textView -->
     <style name="style_padding">
         <item name="android:paddingStart">@dimen/padding_normal</item>

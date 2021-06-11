@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- style for date and time  -->
+    <style name="timeAndDatePicker" parent="Theme.AppCompat.DayNight.Dialog">
+
+    </style>
+
    <!-- Text style of textView -->
     <style name="style_text">
         <item name="android:textColor">@color/white</item>
