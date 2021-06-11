@@ -3,8 +3,7 @@
 
     <!--The left side of the bottom is 3 from the left side of the upper layer. dp, The top of the bottom, 6 from the top of the top. dp,If this control is not done, the left and upper sides of the bottom and upper layers will overlap.-->
     <item android:left="3dp"
-        android:bottom="6dp"
-     >
+        android:bottom="6dp">
         <shape>
             <corners android:radius="20dp"/>
 

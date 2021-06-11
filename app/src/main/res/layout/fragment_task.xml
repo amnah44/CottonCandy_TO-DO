@@ -10,21 +10,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:paddingTop="@dimen/margin_normal"
-        android:background="@drawable/circle">
+        style="@style/layoutAddTask">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/boxAddTask"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/margin4x"
             android:layout_marginBottom="64dp"
-            android:background="@drawable/layer"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/boxAddTask" >
 
             <TextView
                 android:id="@+id/textView3"
@@ -37,21 +35,21 @@
                 app:layout_constraintBottom_toTopOf="@+id/editText_task"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/gray"/>
 
              <EditText
                 android:id="@+id/editText_task"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin2x"
-                android:background="@drawable/txt_edit"
                 android:fontFamily="@font/sniglet"
                 android:hint=" Enter new task . . ."
                 android:lines="2"
                 android:maxLines="3"
                 android:paddingStart="@dimen/margin4x"
-                android:textColor="@color/black"
                 android:textSize="@dimen/txt3x"
+                 style="@style/editTexlTask"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,16 +58,16 @@
 
             <Button
                 android:id="@+id/date_pickerButton"
-                style="?android:spinnerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin2x"
-                android:background="@drawable/btn_shape"
                 android:drawableLeft="@drawable/ic_date_range"
                 android:hint=" 11-11-2016 , Friday"
                 android:paddingHorizontal="@dimen/margin4x"
                 android:paddingVertical="@dimen/margin2x"
+                android:textAlignment="textStart"
                 android:textSize="14sp"
+                style="@style/editTextForAll"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
@@ -87,20 +85,19 @@
 
             <Button
                 android:id="@+id/time_pickerButton"
-                style="?android:spinnerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin2x"
-                android:background="@drawable/btn_shape"
                 android:drawableLeft="@drawable/ic_baseline_more_time_24"
                 android:hint=" 11:13"
                 android:gravity="left|center"
-                android:textAlignment="gravity"
                 android:paddingHorizontal="@dimen/margin4x"
                 android:paddingVertical="@dimen/margin2x"
                 android:textSize="14sp"
+                style="@style/editTextForAll"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_pickerButton" />
+                app:layout_constraintTop_toBottomOf="@+id/date_pickerButton"
+               />
 
 
 
@@ -109,13 +106,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin2x"
-                android:background="@drawable/btn_shape"
                 android:fontFamily="@font/sniglet"
                 android:hint=" Note"
                 android:maxLines="5"
                 android:lines="3"
                 android:padding="@dimen/margin2x"
                 android:visibility="visible"
+                style="@style/editTextForAll"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time_pickerButton" />
