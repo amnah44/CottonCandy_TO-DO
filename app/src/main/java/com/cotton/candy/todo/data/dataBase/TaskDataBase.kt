@@ -20,7 +20,8 @@ class TaskDataBase(context: Context) : SQLiteOpenHelper(context, DBNAME, null, D
         dataBase?.execSQL(sql)
 
         val todoSql = "CREATE TABLE ${TablesDetiles.TODO_TABLE_NAME}(" +
-                "${TablesDetiles.ID} INTEGER," +
+                "${TablesDetiles.ID} INTEGER PRIMARY KEY," +
+                "${TablesDetiles.TODO_TASK_ID} INTEGER," +
                 "${TablesDetiles.TODO_TITLE} TEXT," +
                 "${TablesDetiles.TODO_IS_COMPLETED} INT" +
                 ")"

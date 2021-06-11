@@ -13,9 +13,11 @@ import com.cotton.candy.todo.data.TodoItemModel
 import com.cotton.candy.todo.data.dataBase.TablesDetiles
 import com.cotton.candy.todo.data.dataBase.TaskDataBase
 import com.cotton.candy.todo.databinding.FragmentTodoBinding
+import com.cotton.candy.todo.ui.TodoCheckBoxListener
 import com.cotton.candy.todo.util.Constants
+import com.google.android.material.tabs.TabLayout
 
-class TodoListFragment : BaseFragment<FragmentTodoBinding>() {
+class TodoListFragment : BaseFragment<FragmentTodoBinding>(), TodoCheckBoxListener {
     override val LOG_TAG: String
         get() = "TODO_FRAGMENT"
     override val bindingInflater: (LayoutInflater) -> FragmentTodoBinding =
@@ -28,7 +30,7 @@ class TodoListFragment : BaseFragment<FragmentTodoBinding>() {
     private fun getArgs(arg: Bundle?) =
         arg?.let {
             taskID = it.getInt(Constants.KEY_ID)
-            Log.i("argCity",taskID.toString())
+            Log.i("argCity", taskID.toString())
 
         }
 
@@ -45,15 +47,16 @@ class TodoListFragment : BaseFragment<FragmentTodoBinding>() {
 
     private fun getTodoList() {
         val cursor = dataBaseHelper.readableDatabase.rawQuery(
-            "SELECT * FROM ${TablesDetiles.TODO_TABLE_NAME} WHERE ${TablesDetiles.ID} = ?",
+            "SELECT * FROM ${TablesDetiles.TODO_TABLE_NAME} WHERE ${TablesDetiles.TODO_TASK_ID} = ?",
             arrayOf<String>("$taskID")
         )
         while (cursor.moveToNext()) {
             todoListItems.add(
                 TodoItemModel(
                     cursor.getInt(0),
-                    cursor.getString(1),
-                    cursor.getInt(2)
+                    cursor.getInt(1),
+                    cursor.getString(2),
+                    cursor.getInt(3)
                 )
             )
         }
@@ -62,9 +65,10 @@ class TodoListFragment : BaseFragment<FragmentTodoBinding>() {
     }
 
     private fun initTodoRecyclerView() {
+        todoListItems.reverse()
         binding?.todoRecyclerView?.apply {
-                layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-                adapter = TodoListAdapter(todoListItems,)
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            adapter = TodoListAdapter(todoListItems, this@TodoListFragment)
         }
     }
 
@@ -73,20 +77,36 @@ class TodoListFragment : BaseFragment<FragmentTodoBinding>() {
             val todoTitle = binding?.todoEditText?.text.toString().trim()
 
             val newEntry = ContentValues().apply {
-                put(TablesDetiles.ID, taskID)
+                put(TablesDetiles.TODO_TASK_ID, taskID)
                 put(TablesDetiles.TODO_TITLE, todoTitle)
                 put(TablesDetiles.TODO_IS_COMPLETED, 0)
             }
-            dataBaseHelper.writableDatabase.insert(
+            val id = dataBaseHelper.writableDatabase.insert(
                 TablesDetiles.TODO_TABLE_NAME,
                 null,
                 newEntry
             )
 
-            todoItem = TodoItemModel(taskID, binding?.todoEditText?.text.toString().trim(), 0)
+
+            todoItem =
+                TodoItemModel(id.toInt(), taskID, binding?.todoEditText?.text.toString().trim(), 0)
             todoListItems.add(0, todoItem)
             binding?.todoRecyclerView?.adapter?.notifyDataSetChanged()
         }
+    }
+
+    override fun onCheckChangeListener(todoItem: TodoItemModel) {
+        val newEntry = ContentValues().apply {
+            put(TablesDetiles.TODO_TASK_ID, todoItem.todoTaskId)
+            put(TablesDetiles.TODO_TITLE, todoItem.title)
+            put(TablesDetiles.TODO_IS_COMPLETED, todoItem.isCompleted)
+        }
+        dataBaseHelper.writableDatabase.update(
+            TablesDetiles.TODO_TABLE_NAME,
+            newEntry,
+            "${TablesDetiles.ID} = ?",
+            arrayOf<String>("${todoItem.id}")
+        )
     }
 
 }

@@ -10,4 +10,5 @@ object TablesDetiles {
     const val TODO_TABLE_NAME = "TODO"
     const val TODO_TITLE = "title"
     const val TODO_IS_COMPLETED = "isCompleted"
+    const val TODO_TASK_ID = "taskID"
 }
