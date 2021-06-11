@@ -73,14 +73,12 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(), DatePickerDialog.OnDat
                 addTasksToDatabase()
                 (activity)!!.supportFragmentManager.beginTransaction().apply {
                     setCustomAnimations(
-                        R.anim.slide_from_right,
-                        R.anim.slideout_from_left,
                         R.anim.slide_from_left,
                         R.anim.slideout_from_right
                     )
                     remove(this@TaskFragment)
                     addToBackStack(java.lang.String.valueOf(MainActivity()))
-                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     commit()
 
 
