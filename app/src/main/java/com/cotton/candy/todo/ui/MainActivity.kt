@@ -2,10 +2,12 @@ package com.cotton.candy.todo.ui
 
 
 import android.app.Activity
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.animation.Animation
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -75,20 +77,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
 
     override fun addCallbacks() {
         binding!!.apply {
-            fabAddTask.setOnClickListener {
+            fabAddTask.setOnClickListener{
                 loadFragments(_TaskFragment)
             }
-            //this part to add animation in image tha content stars
-//        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
-//        moveStars.repeatCount = Animation.INFINITE
-//        binding!!.image1.startAnimation(moveStars)
-//        binding!!.image2.startAnimation(moveStars)
-//        binding!!.image3.startAnimation(moveStars)
-//        binding!!.image4.startAnimation(moveStars)
-//        binding!!.image5.startAnimation(moveStars)
-//        binding!!.image6.startAnimation(moveStars)
-
-
+            imgDark.setOnClickListener{
+                val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+                when (isNightTheme) {
+                    Configuration.UI_MODE_NIGHT_YES ->{
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+                    Configuration.UI_MODE_NIGHT_NO ->{
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                }
+            }
         }
     }
 

@@ -18,6 +18,21 @@
         <item name="android:windowBackground">@drawable/splash_resource</item>
         <item name="android:statusBarColor">@color/mustard_color</item>
     </style>
+
+    <!-- Style of style subtask button -->
+    <style name="style_subtask_button">
+        <item name="background">@drawable/shap_btn_subtask</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+    </style>
+
+     <!-- style for date and time  -->
+    <style name="timeAndDatePicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/mustard_color</item>
+        <item name="colorAccent">@color/mustard_color</item>
+    </style>
+
     <!-- Padding style of textView -->
     <style name="style_padding">
         <item name="android:paddingStart">@dimen/padding_normal</item>
@@ -40,12 +55,45 @@
         <item name="android:tint">@color/white</item>
         <item name="android:elevation">@dimen/padding_normal</item>
     </style>
-
-    <!-- Style of style subtask button -->
-    <style name="style_subtask_button">
-        <item name="background">@drawable/shap_btn_subtask</item>
-        <item name="android:tint">@color/white</item>
-        <item name="android:elevation">@dimen/padding_normal</item>
+    <!--  style for fragment container  -->
+    <style name="fragment_container">
+        <item name="background">@color/white</item>
+        <item name="android:textColor">@color/white</item>
     </style>
-
+<!--  style for img_dark  -->
+    <style name="img_dark">
+        <item name="android:src">@drawable/ic_dark_mode</item>
+    </style>
+<!--  style for text  -->
+    <style name="black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+<!--  style for text  -->
+    <style name="gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+<!--  style for box progress  -->
+    <style name="boxProgress">
+        <item name="android:background">@drawable/primary_shape</item>
+    </style>
+<!--  style for layout add task  -->
+    <style name="layoutAddTask">
+        <item name="android:background">@drawable/circle</item>
+    </style>
+<!--  style for box add task  -->
+    <style name="boxAddTask">
+        <item name="android:background">@drawable/layer</item>
+    </style>
+<!--  style for edit text task  -->
+    <style name="editTexlTask">
+        <item name="android:textColorHint">@color/gray100</item>
+        <item name="android:background">@drawable/txt_edit</item>
+    </style>
+<!--  style for adit text for add task  -->
+    <style name="black.editTextForAll">
+        <item name="android:background">@drawable/btn_shape</item>
+    </style>
+<!--  style textNewTask  -->
+    <style name="gray.textNewTask">
+    </style>
 </resources>

@@ -1,18 +1,127 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TODO" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.TODO" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/mustard_color</item>
         <item name="colorPrimaryVariant">@color/mustard_color</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnPrimary">@color/blackDark</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/mustard_color</item>
         <item name="colorSecondaryVariant">@color/black</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/blackDark</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- style for date and time  -->
+    <style name="timeAndDatePicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimaryDark">@color/mustard_color</item>
+        <item name="colorAccent">@color/mustard_color</item>
+        <item name="colorPrimary">@color/mustard_color</item>       <!--header background-->
+        <item name="android:windowBackground">@color/blackDark</item>     <!--calendar background-->
+        <item name="android:colorControlActivated">@color/mustard_color</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/mustard_color</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/mustard_color</item>
+        <item name="android:headerBackground">@color/mustard_color</item>
+        <item name="colorControlActivated">@color/mustard_color</item>
+        <item name="android:textColorTertiary">@color/mustard_color</item>
+        <item name="android:buttonBarNegativeButtonStyle">
+            @style/DatePickerTheme.ButtonBarNegativeButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">
+            @style/DatePickerTheme.ButtonBarNegativeButtonStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">
+            @style/DatePickerTheme.ButtonBarNegativeButtonStyle</item>
 
+        <item name="colorControlNormal">@color/mustard_color</item>
+        <item name="android:numbersTextColor">@color/mustard_color</item>
+
+        <item name="android:timePickerStyle">@style/MyTimePickerDark</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <!-- Dark Time Picker-->
+    <style name="MyTimePickerDark" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">@color/mustard_color</item>
+        <item name="android:numbersBackgroundColor">@color/blackDark</item>
+    </style>
+
+    <!-- Light Time Picker-->
+    <style name="MyTimePickerLight" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">#FF5722</item>
+        <item name="android:numbersTextColor">#673AB7</item>
+        <item name="android:numbersSelectorColor">#FFEB3B</item>
+        <item name="android:numbersBackgroundColor">#61E761</item>
+        <item name="android:background">#FFC107</item>
+    </style>
+
+    <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/mustard_color</item>
+    </style>
+    <!-- Text style of textView -->
+    <style name="style_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Style of Constraint layout-->
+    <style name="style_constraint_layout">
+        <item name="android:background">@drawable/primary_shape</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+    </style>
+    <!-- Style of Floating action button-->
+    <style name="style_floating_action_button" parent="Theme.AppCompat.Light">
+        <item name="android:backgroundTint">#A88EDA</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+        <item name="colorPrimaryDark">@color/white</item>
+    </style>
+    <!--  style for fragment container  -->
+    <style name="fragment_container" >
+        <item name="background">@color/blackDark</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--  style for img_dark  -->
+    <style name="img_dark">
+        <item name="android:src">@drawable/ic_baseline_light_mode_24</item>
+    </style>
+    <!--  style for text  -->
+    <style name="black">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--  style for text  -->
+    <style name="gray">
+        <item name="android:textColor">@color/gray50</item>
+    </style>
+    <!--  style for box progress  -->
+    <style name="boxProgress">
+        <item name="android:background">@drawable/primary_shape</item>
+    </style>
+    <!--  style for layout add task  -->
+    <style name="layoutAddTask">
+        <item name="android:background">@drawable/circle</item>
+    </style>
+    <!--  style for box add task  -->
+    <style name="boxAddTask">
+        <item name="android:background">@drawable/layout_night</item>
+    </style>
+    <!--  style for edit text task  -->
+    <style name="editTexlTask">
+        <item name="android:textColorHint">#EFEFEF</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/txt_edit_night</item>
+    </style>
+    <!--  style for adit text for add task  -->
+    <style name="black.editTextForAll">
+        <item name="android:textColorHint">#EDEDED</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_shape_night</item>
+    </style>
+    <!--  style textNewTask  -->
+    <style name="gray.textNewTask">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

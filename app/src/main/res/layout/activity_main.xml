@@ -5,46 +5,30 @@
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    app:backgroundTint="@android:color/transparent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_for_task"
+        style="@style/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_add_task"
-            style="@style/style_floating_action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
-            app:layout_constraintStart_toStartOf="parent"
-            app:backgroundTint="@android:color/transparent"
-            android:src="@drawable/ic_add" />
+
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_dark_mode"
+            android:layout_marginBottom="619dp"
+            app:tint="@color/mustard_color"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/mustard_color" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="Dark Theme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintVertical_bias="0.0"
+            style="@style/img_dark"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -53,23 +37,24 @@
             android:layout_marginTop="60dp"
             android:fontFamily="@font/sniglet"
             android:text="CottonCandy-TODO"
-            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/black"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/sniglet"
             android:text="How is your work life balance this week?"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            style="@style/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 <!--        <LinearLayout-->
 <!--            android:id="@+id/linearLayout"-->
@@ -140,6 +125,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_task"
+            style="@style/style_floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_add" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
