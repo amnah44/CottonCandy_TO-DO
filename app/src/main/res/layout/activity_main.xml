@@ -128,7 +128,6 @@
 
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/taskRecycler"
             android:layout_width="409dp"
