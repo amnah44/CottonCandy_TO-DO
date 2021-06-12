@@ -35,4 +35,12 @@
         <item name="android:tint">@color/white</item>
         <item name="android:elevation">@dimen/padding_normal</item>
     </style>
+
+    <!-- Style of style subtask button -->
+    <style name="style_subtask_button">
+        <item name="background">@drawable/shap_btn_subtask</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:elevation">@dimen/padding_normal</item>
+    </style>
+
 </resources>

@@ -5,27 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/root"
-    android:layout_margin="4dp"
-    app:cardElevation="4dp">
+    app:cardElevation="1dp"
+    android:layout_margin="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp">
+        android:padding="10dp">
 
-        <CheckBox
+        <net.igenius.customcheckbox.CustomCheckBox
             android:id="@+id/todoItemCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:color_checked="@android:color/transparent"
+            app:color_tick="@color/mustard_color"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:small_tick="false" />
+        
         <TextView
             android:id="@+id/todoTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textSize="14sp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="@+id/todoItemCheckBox"
             app:layout_constraintStart_toEndOf="@+id/todoItemCheckBox"
             app:layout_constraintTop_toTopOf="@+id/todoItemCheckBox"
