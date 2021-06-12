@@ -75,10 +75,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
 
     override fun addCallbacks() {
         binding!!.apply {
-            fabAddTask.setOnClickListener{
+            fabAddTask.setOnClickListener {
                 loadFragments(_TaskFragment)
             }
-        //this part to add animation in image tha content stars
+            //this part to add animation in image tha content stars
 //        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
 //        moveStars.repeatCount = Animation.INFINITE
 //        binding!!.image1.startAnimation(moveStars)
@@ -89,6 +89,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
 //        binding!!.image6.startAnimation(moveStars)
 
 
+        }
     }
 
     //load fragment to enter tasks with simple animation
