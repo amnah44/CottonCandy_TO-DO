@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.cotton.candy.todo.R
 
 abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity() {
     //initial variable for log fun
@@ -17,6 +18,7 @@ abstract class BaseActivity <VB : ViewBinding> : AppCompatActivity() {
         get() = _binding as VB?
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_TODO)
         super.onCreate(savedInstanceState)
         _binding = bindingInflater(layoutInflater)
         setContentView(requireNotNull(_binding).root)

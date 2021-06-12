@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TODO" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.TODO" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/mustard_color</item>
         <item name="colorPrimaryVariant">@color/mustard_color</item>
@@ -12,6 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <!-- style for date and time  -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_resource</item>
+        <item name="android:statusBarColor">@color/mustard_color</item>
     </style>
 
     <!-- style for date and time  -->
