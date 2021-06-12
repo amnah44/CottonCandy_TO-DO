@@ -38,6 +38,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
     override fun setUp() {
         dataBaseHelper = TaskDataBase(applicationContext)
         getTaskList()
+
     }
 
     private fun getTaskList() {
@@ -73,7 +74,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
     }
 
     override fun addCallbacks() {
-
+        binding!!.apply {
+            fabAddTask.setOnClickListener{
+                loadFragments(_TaskFragment)
+            }
         //this part to add animation in image tha content stars
 //        moveStars = AnimationUtils.loadAnimation(applicationContext,R.anim.move_stars)
 //        moveStars.repeatCount = Animation.INFINITE
