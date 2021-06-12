@@ -67,7 +67,7 @@
             android:layout_marginEnd="64dp"
             android:layout_marginBottom="@dimen/margin2x"
             android:fontFamily="@font/sniglet"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/timeTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view"
