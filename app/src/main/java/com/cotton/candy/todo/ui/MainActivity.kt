@@ -85,9 +85,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), NotifyAdapterNewTask, 
 //        binding!!.image6.startAnimation(moveStars)
 
 
-        binding!!.fabAddTask.setOnClickListener {
-            loadFragments(_TaskFragment)
-        }
     }
 
     //load fragment to enter tasks with simple animation

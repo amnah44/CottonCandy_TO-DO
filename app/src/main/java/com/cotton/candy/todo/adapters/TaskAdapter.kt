@@ -39,9 +39,9 @@ class TaskAdapter(val taskList: ArrayList<TaskModel>, val listener: TaskItemClic
         holder.binding?.noteTextView?.setOnClickListener{
             listener.onTaskItemClick(taskList[position])
         }
-        holder.binding?.cheak?.setOnClickListener {
-            holder.binding?.cheak?.setImageResource(R.drawable.ic_baseline_check_box_24)
-        }
+//        holder.binding?.cheak?.setOnClickListener {
+//            holder.binding?.cheak?.setImageResource(R.drawable.ic_baseline_check_box_24)
+//        }
         }
 
 
