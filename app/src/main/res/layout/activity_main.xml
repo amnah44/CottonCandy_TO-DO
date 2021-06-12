@@ -60,162 +60,63 @@
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_margin="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/primary_shape"
-            android:gravity="center|start"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:layout_margin="24dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:background="@drawable/primary_shape"-->
+<!--            android:gravity="center|start"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/textView"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/textView"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView">-->
 
-            <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                android:id="@+id/minProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="16dp"
-                android:progressDrawable="@drawable/circular_progress_bar"
-                app:cpb_background_progressbar_color="#ccc"
-                app:cpb_background_progressbar_width="6dp"
-                app:cpb_progress_max="80"
-                app:cpb_progressbar_color="@color/txt_color"
-                app:cpb_progressbar_width="8dp" />
+<!--            <com.mikhaellopez.circularprogressbar.CircularProgressBar-->
+<!--                android:id="@+id/minProgressBar"-->
+<!--                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                android:progressDrawable="@drawable/circular_progress_bar"-->
+<!--                app:cpb_background_progressbar_color="#ccc"-->
+<!--                app:cpb_background_progressbar_width="6dp"-->
+<!--                app:cpb_progress_max="80"-->
+<!--                app:cpb_progressbar_color="@color/txt_color"-->
+<!--                app:cpb_progressbar_width="8dp" />-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="64dp"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginEnd="64dp"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sniglet"
-                    android:text="Great Job !"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sniglet"-->
+<!--                    android:text="Great Job !"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sniglet"
-                    android:text="Your life is well balanced"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/sniglet"-->
+<!--                    android:text="Your life is well balanced"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="14sp" />-->
 
 
-            </LinearLayout>
-        </LinearLayout>
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_add_task"
-            style="@style/style_floating_action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_add" />
 
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.86"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.79"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/mustard_color" />
 
-        <ImageView
-            android:id="@+id/image6"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.92"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/mustard_color" />
-
-        <ImageView
-            android:id="@+id/image2"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.75"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/mustard_color" />
-
-        <ImageView
-            android:id="@+id/image4"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.92"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.37"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:id="@+id/image3"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.88"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.47000003"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/white" />
-
-        <ImageView
-            android:id="@+id/image5"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:elevation="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.89"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.73"
-            app:srcCompat="@drawable/ic_star"
-            app:tint="@color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/taskRecycler"
@@ -228,7 +129,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

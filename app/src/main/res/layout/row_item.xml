@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="200dp"
     android:layout_margin="16dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp">
@@ -17,48 +17,72 @@
             android:id="@+id/taskTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/margin2x"
+            android:layout_marginTop="@dimen/margin2x"
+            android:textColor="@color/mustard_color"
+            android:fontFamily="@font/sniglet"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Task" />
 
+        <View
+            android:id="@+id/view"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin2x"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/taskTextView"
+            app:layout_constraintTop_toBottomOf="@id/taskTextView" />
+
         <TextView
             android:id="@+id/timeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
+            android:fontFamily="@font/sniglet"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/dateTextView"
-            app:layout_constraintEnd_toEndOf="@+id/dateTextView"
+            app:layout_constraintStart_toStartOf="@+id/noteTextView"
             tools:text="12:00" />
 
         <TextView
             android:id="@+id/dateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             android:textSize="12sp"
+            android:layout_marginStart="@dimen/margin2x"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
             tools:text="YY:MM:DD" />
 
         <TextView
             android:id="@+id/noteTextView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/margin2x"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="@dimen/margin2x"
+            android:fontFamily="@font/sniglet"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/timeTextView"
-            app:layout_constraintEnd_toEndOf="@+id/dateTextView"
-            app:layout_constraintStart_toStartOf="@+id/taskTextView"
-            app:layout_constraintTop_toBottomOf="@+id/taskTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view"
             tools:text="NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE\nNOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE" />
 
+        <ImageView
+            android:id="@+id/cheak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_check_box_outline_blank_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/margin2x"
+            app:layout_constraintTop_toBottomOf="@+id/noteTextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 
