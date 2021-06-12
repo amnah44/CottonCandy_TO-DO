@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
     <!-- Padding style of textView -->
+    <style name="style_splash" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_resource</item>
+        <item name="android:statusBarColor">@color/mustard_color</item>
+    </style>
+    <!-- Padding style of textView -->
     <style name="style_padding">
         <item name="android:paddingStart">@dimen/padding_normal</item>
         <item name="android:paddingEnd">@dimen/padding_normal</item>

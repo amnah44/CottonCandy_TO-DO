@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:drawable="@color/mustard_color"/>
+    <item android:drawable="@drawable/ic_undraw_quick_chat_re_bit5"
+        android:gravity="center"/>
+</layer-list>
